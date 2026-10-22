@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=240, height=282, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Agent Type Mode</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header: target agent selector & status -->
+    <header id="top-bar">
+      <div id="target-pill" class="pill">
+        <span class="pill-label">AGENT:</span>
+        <span id="target-name">PC</span>
+      </div>
+      <div id="char-badge">0</div>
+    </header>
+
+    <!-- Main composer area -->
+    <main id="composer">
+      <div id="screen-input" class="screen active">
+        <div id="text-display" class="placeholder">Hold side button to speak or tap keys...</div>
+        <div id="keyboard" class="kb-grid">
+          <div class="kb-row">
+            <button class="key" data-k="Q">Q</button>
+            <button class="key" data-k="W">W</button>
+            <button class="key" data-k="E">E</button>
+            <button class="key" data-k="R">R</button>
+            <button class="key" data-k="T">T</button>
+            <button class="key" data-k="Y">Y</button>
+            <button class="key" data-k="U">U</button>
+            <button class="key" data-k="I">I</button>
+            <button class="key" data-k="O">O</button>
+            <button class="key" data-k="P">P</button>
+          </div>
+          <div class="kb-row">
+            <button class="key" data-k="A">A</button>
+            <button class="key" data-k="S">S</button>
+            <button class="key" data-k="D">D</button>
+            <button class="key" data-k="F">F</button>
+            <button class="key" data-k="G">G</button>
+            <button class="key" data-k="H">H</button>
+            <button class="key" data-k="J">J</button>
+            <button class="key" data-k="K">K</button>
+            <button class="key" data-k="L">L</button>
+          </div>
+          <div class="kb-row">
+            <button class="key action-key" data-action="quick">⚡</button>
+            <button class="key" data-k="Z">Z</button>
+            <button class="key" data-k="X">X</button>
+            <button class="key" data-k="C">C</button>
+            <button class="key" data-k="V">V</button>
+            <button class="key" data-k="B">B</button>
+            <button class="key" data-k="N">N</button>
+            <button class="key" data-k="M">M</button>
+            <button class="key action-key" data-action="back">⌫</button>
+          </div>
+          <div class="kb-row">
+            <button class="key action-key" data-action="mode">123</button>
+            <button class="key space-key" data-k=" ">SPACE</button>
+            <button class="key send-key" data-action="send">SEND</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick prompts overlay -->
+      <div id="screen-quick" class="screen">
+        <div class="quick-title">Quick Actions (Scroll wheel)</div>
+        <div id="quick-list" class="quick-list">
+          <div class="quick-item active" data-text="Open Notepad">Open Notepad</div>
+          <div class="quick-item" data-text="What time is it on the PC?">What time is it on the PC?</div>
+          <div class="quick-item" data-text="Review latest git diff">Review latest git diff</div>
+          <div class="quick-item" data-text="Fix failing tests">Fix failing tests</div>
+          <div class="quick-item" data-text="Check background build">Check background build</div>
+          <div class="quick-item" data-text="Summarize current status">Summarize current status</div>
+          <div class="quick-item" data-text="Deploy to staging">Deploy to staging</div>
+        </div>
+        <div class="quick-hint">Wheel: choose • Side tap: select</div>
+      </div>
+
+      <!-- Outbox / Result Screen -->
+      <div id="screen-status" class="screen">
+        <div id="status-icon">…</div>
+        <div id="status-title">Ready</div>
+        <div id="status-desc"></div>
+        <div id="status-meta"></div>
+        <div id="status-reply"></div>
+        <div class="status-hint">Tap side button to return</div>
+      </div>
+    </main>
+
+    <!-- Bottom guidance line -->
+    <footer id="footer-bar">
+      <span id="footer-tip">Wheel: Agent • Side Tap: Send</span>
+    </footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

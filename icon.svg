@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="28" fill="#111111"/>
+  <!-- Keyboard / Type Mode Frame -->
+  <rect x="22" y="28" width="84" height="64" rx="8" fill="#1F1F1F" stroke="#FFA040" stroke-width="4"/>
+  <!-- Key grid dots/blocks -->
+  <rect x="30" y="38" width="12" height="10" rx="2" fill="#FFFFFF"/>
+  <rect x="46" y="38" width="12" height="10" rx="2" fill="#FFFFFF"/>
+  <rect x="62" y="38" width="12" height="10" rx="2" fill="#FFFFFF"/>
+  <rect x="78" y="38" width="20" height="10" rx="2" fill="#FFA040"/>
+
+  <rect x="30" y="52" width="16" height="10" rx="2" fill="#FFFFFF"/>
+  <rect x="50" y="52" width="12" height="10" rx="2" fill="#FFFFFF"/>
+  <rect x="66" y="52" width="12" height="10" rx="2" fill="#FFFFFF"/>
+  <rect x="82" y="52" width="16" height="10" rx="2" fill="#FFFFFF"/>
+
+  <rect x="30" y="66" width="20" height="10" rx="2" fill="#888888"/>
+  <rect x="54" y="66" width="30" height="10" rx="2" fill="#FFA040"/>
+  <rect x="88" y="66" width="10" height="10" rx="2" fill="#888888"/>
+
+  <!-- Antenna / Connection Pulse Wave -->
+  <path d="M 52 104 Q 64 96 76 104" fill="none" stroke="#FFA040" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="64" cy="112" r="3" fill="#FFA040"/>
+</svg>

@@ -1,0 +1,320 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 240px;
+  height: 282px;
+  max-width: 240px;
+  max-height: 282px;
+  overflow: hidden;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  width: 240px;
+  height: 282px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #000;
+}
+
+/* Header */
+#top-bar {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  border-bottom: 1px solid #1c1c1c;
+  background: #0a0a0a;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  background: #181818;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #282828;
+}
+
+.pill-label {
+  color: #888;
+  margin-right: 4px;
+}
+
+#target-name {
+  color: #FFA040;
+  letter-spacing: 0.5px;
+}
+
+#char-badge {
+  font-size: 11px;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Screens */
+#composer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* Input & Display */
+#text-display {
+  min-height: 52px;
+  max-height: 52px;
+  padding: 6px 8px;
+  font-size: 14px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  background: #0d0d0d;
+  border-bottom: 1px solid #222;
+  word-break: break-word;
+  overflow-y: auto;
+}
+
+#text-display.placeholder {
+  color: #555555;
+  font-size: 12px;
+  font-style: italic;
+}
+
+#text-display.listening {
+  color: #FFA040;
+  border-bottom-color: #FFA040;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* Keyboard */
+.kb-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 3px 2px 2px 2px;
+  gap: 2px;
+  background: #000;
+}
+
+.kb-row {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+}
+
+.key {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #191919;
+  color: #fff;
+  border: 1px solid #292929;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+  min-height: 32px;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.key:active {
+  background: #FFA040;
+  color: #000;
+  border-color: #FFA040;
+}
+
+.action-key {
+  flex: 1.3;
+  background: #242424;
+  font-size: 11px;
+}
+
+.space-key {
+  flex: 4;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.send-key {
+  flex: 2.2;
+  background: #FFA040;
+  color: #000;
+  font-weight: 800;
+  border-color: #FFA040;
+}
+
+.send-key:active {
+  background: #ffb366;
+  color: #000;
+}
+
+/* Quick Actions Screen */
+#screen-quick {
+  padding: 8px;
+  background: #000;
+}
+
+.quick-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFA040;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.quick-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.quick-item {
+  padding: 8px 10px;
+  background: #141414;
+  border: 1px solid #242424;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quick-item.active {
+  background: #2a1a00;
+  border-color: #FFA040;
+  color: #FFF;
+  font-weight: 700;
+}
+
+.quick-hint, .status-hint {
+  font-size: 10px;
+  color: #777;
+  text-align: center;
+  padding-top: 4px;
+}
+
+/* Status Screen */
+#screen-status {
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #000;
+}
+
+#status-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFA040;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+#status-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+#status-desc {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+#status-meta {
+  font-size: 10px;
+  color: #FFA040;
+  background: #1c140c;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+/* Footer Bar */
+#footer-bar {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0d0d;
+  border-top: 1px solid #1a1a1a;
+}
+
+#footer-tip {
+  font-size: 10px;
+  color: #777;
+  letter-spacing: 0.2px;
+}
+
+/* Status reply (scrollable) */
+#status-reply {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #fff;
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 6px;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  user-select: text;
+  -webkit-user-select: text;
+}
+#status-reply:empty { display: none; }
+#screen-status.has-reply { justify-content: flex-start; padding: 8px; }
+#screen-status.has-reply #status-icon { width: 24px; height: 24px; font-size: 14px; margin-bottom: 4px; }
+#screen-status.has-reply #status-desc { margin-bottom: 4px; }
+#screen-status.has-reply #status-meta { margin-bottom: 4px; }
+#status-icon.err { background: #552200; color: #FFA040; }
